@@ -1,5 +1,5 @@
 # python -m pip install timezonefinder pyaes pbkdf2 SpeechRecognition pydub
-import socket,os
+import socket,os,requests
 ip = requests.get('https://api.ipify.org').content.decode()
 print('My Ip NAT: %s'%ip)
 s=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
