@@ -1,5 +1,12 @@
 # python -m pip install timezonefinder pyaes pbkdf2 SpeechRecognition pydub
 import socket,os
+ip = requests.get('https://api.ipify.org').content.decode()
+print('My Ip NAT: %s'%ip)
+s=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(('8.8.8.8', 0))
+localip=s.getsockname()[0]
+s.close()
+print('My Local Ip: %s'%localip)
 with socket.socket() as listen_client_sock:
     print('Wait for Connextion ...')
     while True:
